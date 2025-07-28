@@ -6,6 +6,7 @@ import './_animations.js';
 import { inicializarFiltros } from './_filters.js';
 import './_plyr-init.js';
 
+import { observarProyectos, resetAnimationIndex } from './_animations.js';
 import { cargarProyectos } from './_loadProjects.js';
 import { openModal, closeModal, setProyectos } from './_modal.js';
 
@@ -35,5 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ⚡ Activar tooltips ahora que los proyectos están cargados
     inicializarTooltips();
     inicializarFiltros();
+    resetAnimationIndex();
+    observarProyectos();
   });
 });

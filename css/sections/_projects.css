@@ -22,6 +22,29 @@
     filter: grayscale(100%);
     transition: filter 0.4s ease, transform 0.3s ease;
   }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      filter: blur(6px);
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }
+
+  .project {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(20px);
+  }
+
+  .project.visible {
+    animation: fadeInUp 0.8s ease forwards;
+  }
   
   /* Tamaños basados en columnas del grid */
   .project-1-1 {
@@ -93,31 +116,18 @@
   }
 
   .overlay-mobile {
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  
-  .overlay-mobile.pre-animate {
-    opacity: 0;
-    transform: translateY(20px);
-    visibility: hidden;
-  }
-  .overlay-mobile.animate {
-    opacity: 1;
-    transform: translateY(0);
-    visibility: visible;
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .overlay-mobile.animate h2 {
-    animation: fadeSlideUp 0.6s ease-out both;
-  }
-  .overlay-mobile.animate p {
-    animation: fadeSlideUp 0.6s ease-out both;
-    animation-delay: 0.15s;
-  }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent);
+    color: white;
+    display: none;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 1;
+}
   
   /* Solo visible en mobile */
   @media (max-width: 1024px) {
@@ -155,17 +165,6 @@
     /* También ocultamos el cursor-tooltip en mobile */
     #project-tooltip {
       display: none !important;
-    }
-  }
-
-  @keyframes fadeSlideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 
