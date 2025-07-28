@@ -3,7 +3,7 @@ import './_modal.js';
 import './_theme.js';
 import { inicializarTooltips } from './_tooltip.js';
 import './_animations.js';
-import './_filters.js';
+import { inicializarFiltros } from './_filters.js';
 import './_plyr-init.js';
 
 import { cargarProyectos } from './_loadProjects.js';
@@ -34,5 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.closeModal = closeModal;
     // ⚡ Activar tooltips ahora que los proyectos están cargados
     inicializarTooltips();
+    inicializarFiltros();
   });
 });

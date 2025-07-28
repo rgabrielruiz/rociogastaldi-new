@@ -1,15 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+export function inicializarFiltros() {
   const filterButtons = document.querySelectorAll('.filter-btn');
-  const projects = document.querySelectorAll('.project');
+  const aboutLink = document.querySelector('.about-link');
+  const footerSection = document.getElementById('footer');
 
   filterButtons.forEach(button => {
     button.addEventListener('click', e => {
       e.preventDefault();
 
       const selected = button.dataset.filter;
-
       filterButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
+
+      const projects = document.querySelectorAll('.project'); // <- importante: adentro del click
 
       projects.forEach(project => {
         const tipo = project.dataset.tipo;
@@ -33,9 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Scroll suave al footer desde "ABOUT"
-  const aboutLink = document.querySelector('.about-link');
-  const footerSection = document.getElementById('footer');
-
   if (aboutLink && footerSection) {
     aboutLink.addEventListener('click', (e) => {
       e.preventDefault();
@@ -57,4 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(footerSection);
   }
-});
+}
