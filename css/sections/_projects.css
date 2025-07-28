@@ -166,6 +166,11 @@
     #project-tooltip {
       display: none !important;
     }
+    
+    .project .media-wrapper {
+      filter: grayscale(0%) !important;
+    }
+
   }
 
     .proyecto-detalle {
