@@ -1,17 +1,12 @@
 // _tooltip.js
 
-document.addEventListener("DOMContentLoaded", () => {
+export function inicializarTooltips() {
   const tooltip = document.getElementById("project-tooltip");
   const projects = document.querySelectorAll(".project");
 
   projects.forEach(project => {
-    const title = project.querySelector(".overlay h2")?.textContent ||
-                  project.getAttribute("data-title") ||
-                  project.style.backgroundImage;
-
-    const client = project.querySelector(".overlay h2")?.textContent ||
-                   project.getAttribute("data-client") ||
-                   "";
+    const title = project.getAttribute("data-title") || "";
+    const client = project.getAttribute("data-client") || "";
 
     project.addEventListener("mouseenter", () => {
       tooltip.innerHTML = `
@@ -30,4 +25,4 @@ document.addEventListener("DOMContentLoaded", () => {
       tooltip.style.display = "none";
     });
   });
-});
+}

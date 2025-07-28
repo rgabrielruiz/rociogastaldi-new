@@ -1,6 +1,9 @@
 // _modal.js
 
-const proyectos = window.PROYECTOS;
+let proyectos = [];
+export function setProyectos(data) {
+  proyectos = data;
+}
 let currentIndex = 0;
 let player;
 

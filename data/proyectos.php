@@ -39,7 +39,7 @@ return [
     'titulo' => 'BABY KATANA',
     'cliente' => 'TAICHU',
     'imagen' => 'assets/projects/img/baby-katana.png',
-    'imagenHover' => 'assets/projects/img/baby-katana2.png',
+    'imagenHover' => '',
     'descripcion' => 'Dirección creativa y producción completa del videoclip.',
     'video' => 'https://player.vimeo.com/video/926441699',
     'size' => '1/2',
